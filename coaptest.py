@@ -12,7 +12,7 @@ while True:
     response = client.get(path)
     print(response.source[0])
     print(response.payload)
-    time.sleep(10)
+    time.sleep(120)
 
 
 
