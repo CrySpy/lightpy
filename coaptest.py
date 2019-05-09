@@ -13,8 +13,8 @@ while True:
     response = client.get(path)
     print(response.source[0])
     print(response.payload)
-    with open("9280.log", "a") as log:
-        log.write("{}\t\t{}\t{}\n".format(response.source[0], dt.now().strftime("%Y-%m-%d %H:%M:%S"), response.payload))
+    with open("./9280.log", "a") as log:
+        log.write("{}\t\t{}\t\t{}\n".format(response.source[0], dt.now().strftime("%Y-%m-%d %H:%M:%S"), response.payload))
     time.sleep(120)
 
 
