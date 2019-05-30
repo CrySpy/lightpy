@@ -1,0 +1,10 @@
+start 3206: 2882 mV
+start 3787: 2917 mV
+start 9280: 2871 mV
+
+Lys av: under 1 lux
+Lys på: ca 90-100 lux
+
+D229: 3206
+D230: 3787
+D231: 9280

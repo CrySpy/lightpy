@@ -2,8 +2,17 @@
 #IPv6 addresses under routing links and stores them in a list
 
 from urllib.request  import urlopen
+import threading
 
-link = "http://[fd00::212:4b00:aff:4b01]/"
+def testFunc(address):
+    colonPos = address.rfind(":") + 1
+    fileName = "./{}.txt".format(address[colonPos:])
+    with open(fileName, "a") as text:
+        text.write(address + "\n")
+    
+
+
+link = "http://[fd00::212:4b00:aff:4b01]/"      #Address does not change                    
 f = urlopen(link)
 foil = f.readlines()
 posistion = 0
@@ -26,7 +35,13 @@ for i in range(posistion+2, length-3):
     address = line[beginPos:endPos]
     addresses.append(address)
 
-print(addresses)
+
+for i in addresses:
+    t = threading.Thread(target=testFunc, args=(i,))
+    t.start()
+
+
+    
 
 
 
